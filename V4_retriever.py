@@ -271,18 +271,41 @@ def DNSTwist(domain_input):
 
 def _main_():
     # Created needed directories
-    final_info = 'data/final/domain-info/'
-    print(os.path.isfile(final_info))
-    if os.path.isfile('data/') == True:
+    _cwd = os.getcwd()
+    try:
+        os.chdir('data/')
+        os.chdir(_cwd)
+    except:
         directory = 'data/'
         os.mkdir(directory)
-        directory = "data/final/"
+
+    try:
+        os.chdir('data/final/')
+        os.chdir(_cwd)
+    except:
+        directory = 'data/final/'
         os.mkdir(directory)
-        directory = "data/final/domain-info/"
+
+    try:
+        os.chdir('data/final/domain-info/')
+        os.chdir(_cwd)
+    except:
+        directory = 'data/final/domain-info/'
         os.mkdir(directory)
-        directory = "data/final/emails/"
+
+    try:
+        os.chdir('data/final/emails/')
+        os.chdir(_cwd)
+    except:
+        directory = 'data/final/emails/'
         os.mkdir(directory)
-        directory = "data/temp/"
+
+    try:
+        os.chdir('data/temp/')
+        os.chdir(_cwd)
+        print("It", os.getcwd())
+    except:
+        directory = 'data/temp/'
         os.mkdir(directory)
 
     # determine what user wants
