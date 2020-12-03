@@ -11,16 +11,16 @@ import time
 from new_pdf_maker import make_pdf
 
 # you will need an API key for hunter.io (Free)
-_hunting_api = 'fe98dad379493a7198f54984e92af9df86721f25'
+_hunting_api = 'insert key'
 
 # You will need an API key for have I Been Pwned (Not Free, as of now. But they are planning to go open source)
-_hibp_key = '4d17b82954d24c1e874e6997d3ed3b28'
+_hibp_key = 'insert key'
 
 # Get a free signal API key, its free (get an API key at: https://auth0.com/signals/ip)
-_signals_key = "f0293f3c-4b9f-4427-a940-62b7efcffab5"
+_signals_key = "insert key"
 
 # abuseipdb api key ...
-abuseipdb = "58d2ae489fc3e5cac0bd06361dc25bae426517c5164d5ab935c440aa783a54c18bbe11e27ef12302"
+abuseipdb = "Insert key"
 
 
 
