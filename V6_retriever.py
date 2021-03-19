@@ -20,7 +20,7 @@ _hibp_key = 'insert key'
 _signals_key = "insert key"
 
 # abuseipdb api key ...
-abuseipdb = "Insert key"
+abuseipdb = "insert key"
 
 
 
@@ -87,7 +87,6 @@ def check_breach(eml):
         pass
     elif r.status_code == 200:
         data = r.json()
-        #print('Breach Check for: %s'%eml)
         for d in data:
             #   Simple info
             breach = d['Name']
@@ -102,8 +101,6 @@ def check_breach(eml):
             # Write the breach info to the csv
             breach_info = "data/final/emails/%s" % file_end + '.csv'
             if os.path.isfile(breach_info):
-                #    with open(breach_info, 'a') as f:
-                #        f.write(email_info)
                 with open(breach_info, 'a', newline='') as f:
                     writer = csv.writer(f)
                     writer.writerow(temp_info)
@@ -117,9 +114,6 @@ def check_breach(eml):
         data = r.json()
         print('Error: <%s>  %s'%(str(r.status_code),data['message']))
         exit()
-
-
-
 
 
 
@@ -219,22 +213,16 @@ def DNSTwist(domain_input):
         x = 0
         for ssdeep_row in csv_reader2:
             # compare rows to temp_ssdeep to find hash value comparisons
-#               if row[1] == ssdeep_row[1]:
                 # This is to avoid the OG domain from being checked
             if x != 0:
                 if ssdeep_row[2]!= '':
-                    # print(ssdeep_row[2])
                     # Check if IP has been checked yet
                     run = ssdeep_row[2] not in ips_used
-                    # print(ips_used)
-                    # print(run)
 
                     if run == True:
                         try:
                             # Check to see if sites are reachable
                             ips_used.append(ssdeep_row[2])
-
-                            # print("HELLO", ssdeep_row[2])
 
                             # Check if IP has been blacklisted (auth API)
                             os.system('cmd /c "curl https://signals.api.auth0.com/v2.0/ip/%s '
